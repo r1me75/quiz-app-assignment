@@ -4,7 +4,7 @@ Deze repository bevat een Dockerized setup voor een full-stack applicatie met ee
 
 ## Vereisten
 
-Docker geïnstalleerd op je machine. Je kunt Docker hier downloaden.
+Docker geïnstalleerd op je machine. Je kunt Docker [hier](https://www.docker.com/products/docker-desktop/) downloaden.
 
 ## Instructies voor bouwen en uitvoeren
 
