@@ -21,7 +21,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class QuizServiceImpl implements IQuizService {
+public class QuizService implements IQuizService {
     private final RestTemplate restTemplate;
     private final QuizRepository quizRepository;
 
@@ -50,10 +50,11 @@ public class QuizServiceImpl implements IQuizService {
             throw new NotFoundException("Quiz not found");
         }
 
-        Question question = quiz.getQuestions().get(checkAnswerRequest.getQuestionIndex());
-        if (question == null) {
+        if (checkAnswerRequest.getQuestionIndex() >= quiz.getQuestions().size()) {
             throw new NotFoundException("Question not found");
         }
+
+        Question question = quiz.getQuestions().get(checkAnswerRequest.getQuestionIndex());
 
         // Verwijder quiz bij laatste vraag
         if(checkAnswerRequest.getQuestionIndex() == quiz.getQuestions().size() - 1) {

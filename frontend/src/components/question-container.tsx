@@ -40,7 +40,7 @@ export default function QuestionContainer() {
       <div className="mx-5 flex flex-row justify-between items-center">
         <div
           className={classNames(
-            "capitalize w-28 text-center py-1 text-sm font-medium bg-red-500 rounded-full text-white",
+            "capitalize w-28 text-center py-1 text-sm font-medium rounded-full text-white",
             {
               "bg-red-500": currentQuestion.difficulty == "hard",
               "bg-yellow-500": currentQuestion.difficulty == "medium",
