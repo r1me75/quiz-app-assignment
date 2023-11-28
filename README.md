@@ -15,11 +15,11 @@ cd quiz-app-assignment
 ```
 ### 2. Bouw de Docker-images:
 ```bash
-docker-compose build
+docker compose build
 ```
 ### 3. Voer de Docker-containers uit:
 ```bash
-docker-compose up
+docker compose up
 ```
 ### 4. Toegang tot de Applicatie:
 * De React frontend is bereikbaar op http://localhost:8079.
@@ -29,6 +29,6 @@ Zorg ervoor dat de poorten gespecificeerd in het docker-compose.yml bestand niet
 
 ### 5. Stoppen van de Applicatie:
 ```bash
-docker-compose down
+docker compose down
 ```
 Deze opdracht stopt en verwijdert de actieve containers.
