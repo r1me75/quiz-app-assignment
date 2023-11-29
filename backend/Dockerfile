@@ -1,5 +1,12 @@
+FROM maven:latest AS maven
+
+WORKDIR /usr/src/app
+COPY . /usr/src/app
+RUN mvn package
+
 FROM openjdk:21
-VOLUME /tmp
-EXPOSE 8080
-ADD target/*.jar app.jar
-CMD ["java", "-jar", "/app.jar"]
+ARG JAR_FILE=*.jar
+WORKDIR /opt/app
+
+COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app/app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
